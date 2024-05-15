@@ -1,9 +1,6 @@
 dist
-.env
 .vscode
 .pytest_cache
-__pycache__
-*.pyc
 .mypy_cache/
 .tox/
 .venv/
@@ -11,3 +8,31 @@ _build/
 buck-out/
 build/
 dist/
+
+# Ignore Sphinx build directory
+/docs/build/
+/docs/source/_build/
+/docs/source/.doctrees/
+/docs/source/.buildinfo
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore temporary files
+*.tmp
+*.log
+*.bak
+*.swp
+*.swo
+*.DS_Store
+
+# Ignore virtual environments
+.venv/
+.venv-*/
+.venv.bak/
+
+# Ignore .env files
+.env
