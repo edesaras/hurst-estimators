@@ -1,0 +1,1 @@
+from .wavelet_estimator import example_func
