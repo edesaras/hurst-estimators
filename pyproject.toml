@@ -17,6 +17,8 @@ pytest = "^6.2"
 python-dotenv = "^0.19.2"
 black = "^23.1.0"
 pre-commit = "^2.20.0"
+sphinx = "^5.0.0"
+sphinx_rtd_theme = "^1.0.0"
 
 [tool.black]
 line-length = 88
