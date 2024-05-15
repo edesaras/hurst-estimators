@@ -3,3 +3,11 @@ dist
 .vscode
 .pytest_cache
 __pycache__
+*.pyc
+.mypy_cache/
+.tox/
+.venv/
+_build/
+buck-out/
+build/
+dist/
