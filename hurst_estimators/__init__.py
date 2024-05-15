@@ -15,5 +15,5 @@ __all__ = [
     "central_estimator",
     "higuchi_estimator",
     "periodogram_estimator",
-    "search_opt_seq_len",
+    # "search_opt_seq_len",
 ]
