@@ -50,5 +50,8 @@ jobs:
         pip install poetry
         poetry install
 
+    - name: Make deploy_docs.sh executable
+      run: chmod +x deploy_docs.sh
+
     - name: Deploy docs
       run: ./deploy_docs.sh
