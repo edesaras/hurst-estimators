@@ -3,7 +3,10 @@ import pywt
 from scipy.stats import linregress
 from typing import Tuple
 
-def wavelet_estimator(X: np.ndarray, method: str = 'awc', wavelet: str = 'db1') -> Tuple[float, float, float, np.ndarray, np.ndarray]:
+
+def wavelet_estimator(
+    X: np.ndarray, method: str = "awc", wavelet: str = "db1"
+) -> Tuple[float, float, float, np.ndarray, np.ndarray]:
     """
     Estimates the Hurst exponent using specified methods: 'awc' (Average Wavelet Coefficients)
     or 'vvl' (Variance Versus Level).
@@ -27,11 +30,11 @@ def wavelet_estimator(X: np.ndarray, method: str = 'awc', wavelet: str = 'db1') 
     """
     if len(X) < 2:
         raise ValueError("The time series must have at least 2 data points.")
-    
+
     coeffs = pywt.wavedec(X, wavelet)
-    if method == 'awc':
+    if method == "awc":
         values = [np.mean(np.abs(c)) for c in coeffs]
-    elif method == 'vvl':
+    elif method == "vvl":
         values = [np.var(np.abs(c)) for c in coeffs]
     else:
         raise ValueError("Method must be either 'awc' or 'vvl'.")
@@ -40,9 +43,9 @@ def wavelet_estimator(X: np.ndarray, method: str = 'awc', wavelet: str = 'db1') 
     log_scales = np.arange(len(log_values))
 
     slope, intercept, _, _, _ = linregress(log_scales, log_values)
-    if method == 'awc':
+    if method == "awc":
         hurst = slope + 0.5  # diverged from the paper in the sign
-    elif method == 'vvl':
-        hurst = (slope + 1)/ 2  # diverged from the paper in the sign
+    elif method == "vvl":
+        hurst = (slope + 1) / 2  # diverged from the paper in the sign
 
     return hurst, slope, intercept, log_scales, log_values

@@ -2,13 +2,14 @@ import numpy as np
 from scipy.stats import linregress
 from typing import Tuple
 
+
 def central_estimator(
-    X: np.ndarray, 
-    max_window_size: int, 
-    *, 
-    min_window_size: int = 10, 
-    r: int = 1, 
-    num_sizes: int = 20
+    X: np.ndarray,
+    max_window_size: int,
+    *,
+    min_window_size: int = 10,
+    r: int = 1,
+    num_sizes: int = 20,
 ) -> Tuple[float, float, float, np.ndarray, np.ndarray]:
     """
     Estimate the Hurst exponent of a time series using moments of specified degree.
@@ -30,9 +31,13 @@ def central_estimator(
     """
     N = len(X)
     if N < min_window_size:
-        raise ValueError("The time series is too short for the specified minimum window size.")
+        raise ValueError(
+            "The time series is too short for the specified minimum window size."
+        )
     if max_window_size > N:
-        raise ValueError("The maximum window size is greater than the length of the time series.")
+        raise ValueError(
+            "The maximum window size is greater than the length of the time series."
+        )
     if min_window_size >= max_window_size:
         raise ValueError("min_window_size must be less than max_window_size.")
     if min_window_size < 1 or max_window_size < 1:
@@ -41,13 +46,15 @@ def central_estimator(
         raise ValueError("Number of sizes must be at least 2.")
 
     # Create window sizes geometrically spaced
-    window_sizes = np.unique(np.geomspace(min_window_size, max_window_size, num=num_sizes).astype(int))
+    window_sizes = np.unique(
+        np.geomspace(min_window_size, max_window_size, num=num_sizes).astype(int)
+    )
     log_sizes = np.log(window_sizes)
     moments = []
 
     for window_size in window_sizes:
         n_segments = len(X) // window_size
-        X_trimmed = X[:window_size * n_segments]
+        X_trimmed = X[: window_size * n_segments]
         X_reshaped = X_trimmed.reshape(n_segments, window_size)
         subseq_avg = X_reshaped.mean(axis=1)
         moments.append((np.abs(subseq_avg - X_trimmed.mean()) ** r).mean())
