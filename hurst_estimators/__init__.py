@@ -4,9 +4,10 @@ from .estimators import (
     higuchi_estimator,
     periodogram_estimator,
 )
-from .utils import (
-    search_opt_seq_len,
-)
+
+# from .utils import (
+#     search_opt_seq_len,
+# )
 
 
 __all__ = [
