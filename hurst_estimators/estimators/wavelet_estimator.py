@@ -1,4 +1,4 @@
 import numpy as np
 
-def example_func(x):
+def wavelet_estimator(x):
     return x * 2
