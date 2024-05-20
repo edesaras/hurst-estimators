@@ -8,6 +8,7 @@ _build/
 buck-out/
 build/
 dist/
+env
 
 # Ignore Sphinx build directory
 /docs/build/
