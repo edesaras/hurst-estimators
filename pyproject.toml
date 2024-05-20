@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hurst-estimators"
-version = "0.0.2"
+version = "0.0.3"
 description = "Library for Hurst estimation methods"
 authors = ["Aras Edeş <edesaras@gmail.com>"]
 license = "MIT"

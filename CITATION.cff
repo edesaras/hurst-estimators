@@ -1,10 +1,18 @@
-cff-version: 0.0.1
-message: "If you use this software, please cite it as below."
+abstract: '<p>9 Hurst estimation methods are added.
+
+  fGn simulation using circulation embedding method is added.</p>
+
+  <p>PYPI distribution: https://pypi.org/project/hurst-estimators/</p>'
 authors:
-- family-names: "Edes"
-  given-names: "Aras"
-  orcid: "https://orcid.org/0009-0000-0688-6218"
-title: "hurst-estimators: A Python library for Hurst exponent estimation"
-version: 0.0.3
-date-released: 2024-05-21
-url: "https://github.com/edesaras/hurst-estimators"
+- family-names: Edes
+  given-names: Aras
+  orcid: 0009-0000-0688-6218
+cff-version: 1.2.0
+date-released: '2024-05-20'
+doi: 10.5281/zenodo.11224470
+license:
+- cc-by-4.0
+repository-code: https://github.com/edesaras/hurst-estimators/tree/v0.0.3-alpha
+title: 'hurst-estimators: A Python library for Hurst exponent estimation'
+type: software
+version: v0.0.3-alpha

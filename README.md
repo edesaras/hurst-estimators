@@ -49,12 +49,15 @@ import hurst_estimators as he
 ## Citation
 
 ```bibtex
-@software{hurst_estimators,
-  author = {Aras Edes},
-  title = {hurst-estimators: A Python library for Hurst exponent estimation},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/edesaras/hurst-estimators}},
+@software{edes_2024_11224470,
+  author       = {Edes, Aras},
+  title        = {{hurst-estimators: A Python library for Hurst 
+                   exponent estimation}},
+  month        = may,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v0.0.3-alpha},
+  doi          = {10.5281/zenodo.11224470},
+  url          = {https://doi.org/10.5281/zenodo.11224470}
 }
 ```
