@@ -4,7 +4,9 @@ from scipy.stats import linregress
 from typing import Tuple
 
 
-def periodogram_estimator(X: np.ndarray) -> Tuple[float, np.ndarray, np.ndarray]:
+def periodogram_estimator(
+    X: np.ndarray,
+) -> Tuple[float, float, float, np.ndarray, np.ndarray]:
     """
     Estimates the Hurst exponent of a time series using the periodogram method.
 
