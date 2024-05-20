@@ -4,6 +4,7 @@ from .estimators import (
     higuchi_estimator,
     periodogram_estimator,
     ghe_estimator,
+    dfa_estimator,
 )
 from .simulators import generate_fgn
 
@@ -14,5 +15,6 @@ __all__ = [
     "higuchi_estimator",
     "periodogram_estimator",
     "ghe_estimator",
+    "dfa_estimator",
     "generate_fgn",
 ]
