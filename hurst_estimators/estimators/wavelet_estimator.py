@@ -44,8 +44,8 @@ def wavelet_estimator(
 
     slope, intercept, _, _, _ = linregress(log_scales, log_values)
     if method == "awc":
-        hurst = slope + 0.5  # diverged from the paper in the sign
+        hurst = -slope + 0.5  # minus sign for negative slope
     elif method == "vvl":
-        hurst = (slope + 1) / 2  # diverged from the paper in the sign
+        hurst = (1 - slope) / 2  # minus sign for negative slope
 
     return hurst, slope, intercept, log_scales, log_values
