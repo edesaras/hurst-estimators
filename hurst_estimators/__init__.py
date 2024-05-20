@@ -17,5 +17,6 @@ __all__ = [
     "periodogram_estimator",
     "ghe_estimator",
     "dfa_estimator",
-    "rs_estimator" "generate_fgn",
+    "rs_estimator",
+    "generate_fgn",
 ]
