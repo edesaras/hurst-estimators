@@ -6,10 +6,6 @@ from .estimators import (
 )
 from .simulators import generate_fgn
 
-# from .utils import (
-#     search_opt_seq_len,
-# )
-
 
 __all__ = [
     "wavelet_estimator",
@@ -17,5 +13,4 @@ __all__ = [
     "higuchi_estimator",
     "periodogram_estimator",
     "generate_fgn",
-    # "search_opt_seq_len",
 ]
