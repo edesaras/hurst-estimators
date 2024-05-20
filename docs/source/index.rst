@@ -6,15 +6,3 @@ Welcome to Hurst Estimators's documentation!
    :caption: Contents:
 
    modules
-
-.. automodule:: hurst_estimators
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
