@@ -5,6 +5,8 @@ Welcome to Hurst Estimators's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   modules
+
 .. automodule:: hurst_estimators
    :members:
    :undoc-members:
