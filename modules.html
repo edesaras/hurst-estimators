@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hurst_estimators &mdash; hurst-estimators 0.0.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to Hurst Estimators’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            hurst-estimators
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">hurst_estimators</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-hurst_estimators.estimators">hurst_estimators.estimators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.central_estimator"><code class="docutils literal notranslate"><span class="pre">central_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.dfa_estimator"><code class="docutils literal notranslate"><span class="pre">dfa_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.ghe_estimator"><code class="docutils literal notranslate"><span class="pre">ghe_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.higuchi_estimator"><code class="docutils literal notranslate"><span class="pre">higuchi_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.periodogram_estimator"><code class="docutils literal notranslate"><span class="pre">periodogram_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.rs_estimator"><code class="docutils literal notranslate"><span class="pre">rs_estimator()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.estimators.wavelet_estimator"><code class="docutils literal notranslate"><span class="pre">wavelet_estimator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-hurst_estimators.simulators">hurst_estimators.simulators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.simulators.generate_fgn"><code class="docutils literal notranslate"><span class="pre">generate_fgn()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#module-hurst_estimators.utils">hurst_estimators.utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hurst_estimators.utils.search_opt_seq_len"><code class="docutils literal notranslate"><span class="pre">search_opt_seq_len()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">hurst-estimators</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">hurst_estimators</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hurst-estimators">
+<h1>hurst_estimators<a class="headerlink" href="#hurst-estimators" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="module-hurst_estimators.estimators">
+<span id="hurst-estimators-estimators"></span><h1>hurst_estimators.estimators<a class="headerlink" href="#module-hurst_estimators.estimators" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.central_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">central_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_sizes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/central_estimator.html#central_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.central_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the Hurst exponent of a time series using moments of specified degree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – The time series data.</p></li>
+<li><p><strong>max_window_size</strong> (<em>int</em>) – The maximum window size to use for computations.</p></li>
+<li><p><strong>min_window_size</strong> (<em>int</em>) – The minimum window size to use for computations.</p></li>
+<li><p><strong>r</strong> (<em>int</em>) – The degree of the moment to use in the calculation.</p></li>
+<li><p><strong>num_sizes</strong> (<em>int</em>) – The number of different window sizes to use.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst (float): The estimated Hurst exponent.
+slope (float): The slope of the regression line.
+intercept (float): The intercept of the regression line.
+log_sizes (np.ndarray): Logarithms of the window sizes used.
+log_moments (np.ndarray): Logarithms of the computed moments for each window size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.dfa_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">dfa_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.99</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/dfa_estimator.html#dfa_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.dfa_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the Hurst exponent using Detrended Fluctuation Analysis (DFA).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – The time series data.</p></li>
+<li><p><strong>w</strong> (<em>int</em>) – The window size for calculating the fluctuation function.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – The percentage for the starting point of the search (default is 0.99).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst (float): Estimated Hurst exponent.
+slope (float): The slope of the regression line.
+intercept (float): The intercept of the regression line.
+log_window_sizes (np.ndarray): Logarithm of window sizes used in the estimation.
+log_fluctuations (np.ndarray): Logarithm of fluctuations corresponding to each window size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.ghe_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">ghe_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_tau</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/ghe_estimator.html#ghe_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.ghe_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the Generalized Hurst exponent of a time series using the q-th order moments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Time series data.</p></li>
+<li><p><strong>q</strong> (<em>float</em>) – Order of the moments.</p></li>
+<li><p><strong>max_tau</strong> (<em>int</em>) – Maximum time lag.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Estimated Hurst exponent.
+List[float]: Logarithm of time lags.
+List[float]: Logarithm of q-th order moments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.higuchi_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">higuchi_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_windows</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/higuchi_estimator.html#higuchi_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.higuchi_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the Hurst exponent of a time series using the Higuchi method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Time series data.</p></li>
+<li><p><strong>min_window_size</strong> (<em>int</em>) – Minimum window size for calculating normalized lengths.</p></li>
+<li><p><strong>max_window_size</strong> (<em>int</em>) – Maximum window size for calculating normalized lengths.</p></li>
+<li><p><strong>num_windows</strong> (<em>int</em>) – Number of window sizes to compute.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst (float): Estimated Hurst exponent.
+slope (float): The slope of the regression line.
+intercept (float): The intercept of the regression line.
+log_window_sizes (np.ndarray): Logarithm of window sizes used in the estimation.
+log_mean_normalized_lengths (np.ndarray): Logarithm of mean normalized lengths corresponding to each window size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.periodogram_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">periodogram_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/periodogram_estimator.html#periodogram_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.periodogram_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the Hurst exponent of a time series using the periodogram method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>np.ndarray</em>) – Time series data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst_exponent (float): Estimated Hurst exponent.
+log_frequencies (np.ndarray): Logarithm of frequencies used for regression.
+log_periodogram (np.ndarray): Logarithm of power spectrum values corresponding to the frequencies.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.rs_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">rs_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.99</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/rs_estimator.html#rs_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.rs_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimate the Hurst exponent using Rescaled Range Analysis (R/S Analysis).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – The time series data.</p></li>
+<li><p><strong>w</strong> (<em>int</em>) – The window size for calculating the rescaled range.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – The percentage for the starting point of the search (default is 0.99).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst (float): Estimated Hurst exponent.
+slope (float): The slope of the regression line.
+intercept (float): The intercept of the regression line.
+log_window_sizes (np.ndarray): Logarithm of window sizes used in the estimation.
+log_rs_values (np.ndarray): Logarithm of rescaled range values corresponding to each window size.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.estimators.wavelet_estimator">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.estimators.</span></span><span class="sig-name descname"><span class="pre">wavelet_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'awc'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'db1'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/hurst_estimators/estimators/wavelet_estimator.html#wavelet_estimator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.estimators.wavelet_estimator" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the Hurst exponent using specified methods: ‘awc’ (Average Wavelet Coefficients)
+or ‘vvl’ (Variance Versus Level).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>np.ndarray</em>) – Time series data.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Estimation method, either ‘awc’ for average wavelet coefficients
+or ‘vvl’ for variance versus level.</p></li>
+<li><p><strong>wavelet</strong> (<em>str</em>) – Type of wavelet to use, default ‘db1’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hurst (float): Estimated Hurst exponent.
+slope (float): The slope of the regression line.
+intercept (float): The intercept of the regression line.
+log_scales (np.ndarray): Logarithm of scales or levels.
+log_values (np.ndarray): Logarithm of mean or variance of wavelet coefficients.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple containing</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the method is not ‘awc’ or ‘vvl’.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="module-hurst_estimators.simulators">
+<span id="hurst-estimators-simulators"></span><h1>hurst_estimators.simulators<a class="headerlink" href="#module-hurst_estimators.simulators" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.simulators.generate_fgn">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.simulators.</span></span><span class="sig-name descname"><span class="pre">generate_fgn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hurst</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="reference internal" href="_modules/hurst_estimators/simulators/generate_fgn.html#generate_fgn"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.simulators.generate_fgn" title="Permalink to this definition"></a></dt>
+<dd><p>Generate a Fractal Gaussian Noise (FGN) sequence of a specified length and Hurst exponent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Length of the sequence.</p></li>
+<li><p><strong>hurst</strong> (<em>float</em>) – Hurst exponent, H (0 &lt; H &lt; 1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Generated FGN sequence.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+<section id="module-hurst_estimators.utils">
+<span id="hurst-estimators-utils"></span><h1>hurst_estimators.utils<a class="headerlink" href="#module-hurst_estimators.utils" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="hurst_estimators.utils.search_opt_seq_len">
+<span class="sig-prename descclassname"><span class="pre">hurst_estimators.utils.</span></span><span class="sig-name descname"><span class="pre">search_opt_seq_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.99</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/hurst_estimators/utils/search_opt_seq_len.html#search_opt_seq_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#hurst_estimators.utils.search_opt_seq_len" title="Permalink to this definition"></a></dt>
+<dd><p>Search the optimal sequence length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>N</strong> (<em>int</em>) – Original sequence length.</p></li>
+<li><p><strong>w</strong> (<em>int</em>) – Lower bound for factors.</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Percentage for the starting point of the search.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Optimal sequence length.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Hurst Estimators’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Aras Edeş.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
