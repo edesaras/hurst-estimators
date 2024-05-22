@@ -9,6 +9,7 @@ buck-out/
 build/
 dist/
 env
+hurst_estimators.egg-info
 
 # Ignore Sphinx build directory
 /docs/build/
