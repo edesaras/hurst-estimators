@@ -19,11 +19,11 @@ The Hurst exponent can be better understood by generating fGN with various Hurst
 
 ACF plot with a Hurst of 0.1 clearly shows negative correlation for lag 1, indicating that large values will follow low values and vice versa. ACF plot with a Hurst of 0.5 has uncorrelated lags, resembling Gaussian noise as expected. On the other hand, a Hurst of 0.9 results in a long tail in the autocorrelation distribution.
 
-![Hurst Exponent and ACF](examples\figures\acf_plot.png)
+![Hurst Exponent and ACF](examples/figures/acf_plot.png)
 
 These behaviors are also apparent in the time series plots.
 
-![Hurst Exponent and Time Series](examples\figures\time_series_hurst_values_fgn.png)
+![Hurst Exponent and Time Series](examples/figures/time_series_hurst_values_fgn.png)
 
 
 ## Installation
