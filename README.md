@@ -2,6 +2,8 @@
 
 Hurst Estimators is a Python library for estimating the Hurst exponent and simulating fractional processes. This library includes popular estimators for the Hurst exponent and simulators for generating fGN, fBM, and fGBM processes.
 
+![Hurst Exponent and Time Series](examples/figures/fbm_hurst_values.png)
+
 Hurst estimation is often employed in:
 - Finance
 - Signal Processing
@@ -71,6 +73,7 @@ All estimation methods are based on log-log regression. Generally, log-scale val
 
 ### Frequency Domain Estimators
 * Periodogram Estimator
+* Welch Estimator
 
 ### Wavelet Estimators
 * Average Wavelet Coefficient (AWC) Estimator
@@ -81,8 +84,27 @@ All estimation methods are based on log-log regression. Generally, log-scale val
 
 # Which Estimator to Choose?
 # Is my data fGN, fBM, fGBM, or something else?
+I don't know. That depends on the type of time series you have. This is for you to assume. But here is a plot of FGN, FBM, and FGBM:
 
+![Hurst Exponent and Time Series](examples/figures/fgn_fbm_fgbm.png)
 
+If you think your data is normally distributed but not quite then use FGN. If *increments* of your data is normally distributed but not quite use FBM. If *log-differences* (or log-returns) of your data is normally distributed but not quite use FGBM.
+
+# 1/f noise and Hurst
+
+The relationship between the $\beta$ of 1/f noise and the Hurst parameter $ H $ is given by:
+
+$$
+H = \frac{\beta + 1}{2}
+$$
+where the spectral density $ S(f) \propto \frac{1}{f^\beta} $ is given by:
+$$
+S(f) \propto \frac{1}{f^\beta}
+$$
+
+The following log-log plot shows the relationship clearly:
+
+![Hurst Exponent and Time Series](examples/figures/1_over_f.png)
 ## Contributing
 
 ## Citation
