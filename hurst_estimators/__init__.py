@@ -7,7 +7,7 @@ from .estimators import (
     dfa_estimator,
     rs_estimator,
 )
-from .simulators import generate_fgn
+from .simulators import generate_fgn, generate_fbm, generate_fgbm
 
 
 __all__ = [
@@ -19,4 +19,6 @@ __all__ = [
     "dfa_estimator",
     "rs_estimator",
     "generate_fgn",
+    "generate_fbm",
+    "generate_fgbm",
 ]
